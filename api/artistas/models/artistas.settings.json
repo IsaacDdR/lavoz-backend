@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artistas",
+  "info": {
+    "name": "Artistas",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "frase": {
+      "type": "text"
+    },
+    "contenido": {
+      "type": "richtext"
+    },
+    "imagen": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "dia": {
+      "type": "integer"
+    },
+    "mes": {
+      "type": "integer"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre"
+    }
+  }
+}
